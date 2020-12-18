@@ -5,7 +5,7 @@ function sleep(ms) {
 }
 
 function sendApiRequest() {
-    let url = 'https://nailsource-api.herokuapp.com/';
+    let url = 'https://handpickd.herokuapp.com/';
     fetch(url, {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
