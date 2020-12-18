@@ -1,0 +1,80 @@
+body {
+    font-family: 'Montserrat';
+}
+#logo {
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    color: #9978D4;
+}
+.pcr-save, .pcr-result {
+    font-family: 'Montserrat';
+}
+.header p {
+    font-weight: 300;
+}
+.container {
+    position: relative;
+    margin-top: 30px;
+}
+#stageZero {
+    margin-top: 70px;
+    width: 60vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5%;
+}
+.scrollContent {
+    overflow-y: scroll;
+    height: 70vh;
+}
+.pcr-button {
+    box-shadow: 1px 1px 5px gray;
+}
+.cursor-disabled, .cursor-disabled:hover {
+    color: #ccc;
+    cursor: not-allowed;
+}
+.v-h-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* li a {
+    color: #BA78D4;
+} */
+.btn-card {
+    height: 250px;
+}
+.btn-card:hover {
+    box-shadow: 1px 1px 5px grey;
+}
+.btn-rainbow {
+    background-color: #9978D4;
+    color: #fff;
+}
+.btn-rainbow:hover{
+    color: #fff;
+    background-image: linear-gradient(
+        to right, 
+        #E7484F,
+        #E7484F 16.65%,
+        #F68B1D 16.65%,
+        #F68B1D 33.3%,
+        #FCED00 33.3%,
+        #FCED00 49.95%,
+        #009E4F 49.95%,
+        #009E4F 66.6%,
+        #00AAC3 66.6%,
+        #00AAC3 83.25%,
+        #732982 83.25%,
+        #732982 100%,
+        #E7484F 100%,
+        #E7484F 100%
+    );
+    animation:slidebg 4s linear infinite;
+}
+@keyframes slidebg {
+    to {
+        background-position:20vw;
+    }
+}
