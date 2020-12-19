@@ -5,6 +5,11 @@ body {
     font-weight: 700;
     letter-spacing: -1.5px;
     color: #9978D4;
+    display: inline-flex;
+    margin-right: 20px;
+}
+#subtitle2 {
+    width: 75%;
 }
 .pcr-save, .pcr-result {
     font-family: 'Montserrat';
@@ -33,6 +38,7 @@ body {
 .cursor-disabled, .cursor-disabled:hover {
     color: #ccc;
     cursor: not-allowed;
+    box-shadow: none !important;
 }
 .v-h-center {
     display: flex;
@@ -76,5 +82,27 @@ body {
 @keyframes slidebg {
     to {
         background-position:20vw;
+    }
+}
+
+/* Mobile compatibility */
+@media (max-width: 575.98px) {
+    #main {
+        /* border: 1px solid red; */
+        overflow-x: hidden;
+    }
+    #stageZero {
+        /* border: 1px solid green; */
+        width: 100%;
+    }
+    #subtitle2 {
+        width: 100%;
+    }
+    .btn-card {
+        width: 90%;
+        height: 30vh;
+        margin-bottom: 5%;
+        margin-left: auto;
+        margin-right: auto;
     }
 }

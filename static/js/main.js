@@ -50,6 +50,23 @@ async function updatePageContent() {
     jsonResponse = '';
 }
 
+function handleFile(input) {
+    let file = input.files[0];
+    let ext = file.name.split('.').pop().toLowerCase();
+    console.log(ext);
+    console.log(typeof ext);
+    if (ext === 'png' || ext === 'jpg' || ext === 'jpeg') {
+        document.getElementById('filetypeAlert').style.display = 'none';
+        document.getElementById('stageTwoImageText').style.display = 'none';
+        document.getElementById('formFile').classList.add('mt-4');
+        // code
+    } else {
+        document.getElementById('filetypeAlert').style.display = 'inherit';
+        document.getElementById('stageTwoImageText').style.display = 'none';
+        // document.getElementById('stageTwoImageText').classList.add('mt-3');
+    }
+}
+
 $('#getStarted').click(function() {
     $('#stageZero').fadeOut('fast');
     $('#stageOne').fadeIn(1000);
@@ -60,4 +77,7 @@ $('#btnPicker').click(function() {
     $('#stageTwoPicker').fadeIn(1000);
 });
 
-// TODO: add code for image upload button
+// $('#btnImage').click(function() {
+//     $('#stageOne').fadeOut('fast');
+//     $('#stageTwoImage').fadeIn(1700);
+// });

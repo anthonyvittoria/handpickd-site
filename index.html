@@ -26,8 +26,8 @@
 
         <!-- Header -->
         <div class="header">
-            <a href="/" style="text-decoration: none;">
-                <h1 id="logo" style="display: inline-flex; margin-right: 20px">HandPickd.</h1>
+            <a href="https://handpickd.app" style="text-decoration: none;">
+                <h1 id="logo">HandPickd.</h1>
             </a>
             <p style="display: inline-flex;">Every shade at your fingertips!</p>
         </div>
@@ -37,8 +37,8 @@
 
             <!-- Stage Zero -->
             <div id="stageZero">
-                <h5 class="mb-4">Meet your personal nail polish shopper &#128133;</h5>
-                <p class="mb-5 mx-auto" style="width: 75%;">Turn any color into a personalized catalog of nail polishes
+                <h5 id="subtitle1" class="mb-4">Meet your personal nail polish shopper &#128133;</h5>
+                <p id="subtitle2" class="mb-5 mx-auto">Turn any color into a personalized catalog of nail polishes
                     with the touch of a button.
                 </p>
                 <p id="getStarted" class="btn btn-lg btn-rainbow">Get Started</p>
@@ -47,8 +47,8 @@
             <!-- Stage One: choose picker or image -->
             <div id="stageOne" style="display: none;">
                 <h5 class="my-5">Let's find your color! &#127912;</h5>
-                <div class="row">
-                    <div class="col">
+                <div class="row v-h-center">
+                    <div class="col-md-4">
                         <div id="btnPicker" class="card btn btn-card">
                             <div class="card-body v-h-center">
                                 <p>Select color from color picker</p>
@@ -56,8 +56,8 @@
 
                         </div>
                     </div>
-                    <div class="col">
-                        <div id="btnImage" class="cursor-disabled card btn btn-card" style="box-shadow: none;">
+                    <div class="col-md-4">
+                        <div id="btnImage" class="cursor-disabled card btn btn-card">
                             <div class="card-body v-h-center">
                                 <p>Select color from image</p>
                             </div>
@@ -70,17 +70,34 @@
             <!-- Stage Two (picker) -->
             <div id="stageTwoPicker" style="display: none;">
                 <div class="row">
-                    <div class="col v-h-center">
+                    <div class="col-md-4 v-h-center">
                         <div class="card-body">
                             <h5 class="mb-3">Select a color</h5>
                             <div class="color-picker"></div>
                         </div>
                     </div>
-                    <div class="col-8" style="text-align: left;">
+                    <div class="col-md-8" style="text-align: left;">
                         <div id="productCatalog" class="scrollContent container mt-5 pt-3" style="border: 1px solid lightgray; border-radius: 5px;"></div>
                     </div>
                 </div>
 
+            </div>
+
+            <!-- Stage Two (image) -->
+            <div id="stageTwoImage" style="display: none;">
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="card-body">
+                            <div id="filetypeAlert" class="alert alert-danger mt-5" style="display: none;">Oops! Make sure to upload an image!</div>
+                            <h5 id="stageTwoImageText" class="mt-5 mb-3">Upload an image</h5>
+                            <input class="form-control w-75 mx-auto" type="file" id="formFile" onchange="handleFile(this)">
+                            <canvas id="canvas" style="width: 400px;">Your web browser does not support HTML5 canvas.</canvas>
+                        </div>
+                    </div>
+                    <div class="col-md-7 v-h-center mx-auto">
+                        <div id="productCatalog" class="scrollContent container mt-5 pt-3" style="border: 1px solid lightgray; border-radius: 5px;"></div>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -91,5 +108,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
     <script src="static/js/main.js"></script>
     <script src="static/js/pickr.js"></script>
+    <script src="static/js/eyedropper.js"></script>
 </body>
 </html>
