@@ -76,8 +76,8 @@ function getPixel(e) {
         y += o.offsetTop;
     } while (o = o.offsetParent);
 
-    x = e.pageX - x - 7; // 7 == border radius
-    y = e.pageY - y - 7;
+    x = e.pageX - x - 15; // 15 == border radius
+    y = e.pageY - y - 15;
     let imageData = ctx.getImageData(x, y, 1, 1);
     color = [imageData.data[0], imageData.data[1], imageData.data[2]];
     let r = color[0], g = color[1], b = color[2];

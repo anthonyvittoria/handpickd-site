@@ -3,7 +3,7 @@ body {
     margin-bottom: 60px;
 }
 canvas {
-    border-width  : 7px;
+    border-width  : 15px;
     border-style  : solid;
     border-radius : 16px;
 }
