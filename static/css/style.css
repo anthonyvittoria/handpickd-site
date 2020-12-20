@@ -2,6 +2,14 @@ body {
     font-family: 'Montserrat';
     margin-bottom: 60px;
 }
+canvas {
+    border-width  : 7px;
+    border-style  : solid;
+    border-radius : 16px;
+}
+li {
+    text-align: left;
+}
 #logo {
     font-weight: 700;
     letter-spacing: -1.5px;
@@ -11,6 +19,9 @@ body {
 }
 #subtitle2 {
     width: 75%;
+}
+#canvas {
+    cursor: crosshair;
 }
 .pcr-save, .pcr-result {
     font-family: 'Montserrat';
@@ -46,18 +57,18 @@ body {
     justify-content: center;
     align-items: center;
 }
-/* li a {
-    color: #BA78D4;
-} */
 .btn-card {
     height: 250px;
 }
 .btn-card:hover {
     box-shadow: 1px 1px 5px grey;
 }
-.btn-rainbow {
+.btn-rainbow, .btn-header {
     background-color: #9978D4;
     color: #fff;
+}
+.btn-header:hover {
+    color: #2b2b2b;
 }
 .btn-rainbow:hover{
     color: #fff;
@@ -85,7 +96,6 @@ body {
         background-position:20vw;
     }
 }
-
 /* Mobile compatibility */
 @media (max-width: 575.98px) {
     #main {
@@ -105,5 +115,10 @@ body {
         margin-bottom: 5%;
         margin-left: auto;
         margin-right: auto;
+    }
+}
+@media (min-width: 576px) {
+    .stageSwitchBtn {
+        float: right;
     }
 }

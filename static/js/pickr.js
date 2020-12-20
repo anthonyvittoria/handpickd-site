@@ -1,4 +1,4 @@
-var color = 0;
+var color;
 
 // Simple example, see optional options for more configuration.
 const pickr = Pickr.create({
@@ -46,9 +46,9 @@ const pickr = Pickr.create({
 
 pickr.on('init', (...args) => {
   color = pickr.getColor().toRGBA();
-  updatePageContent();
+  // updatePageContent(1);
 }).on('save', (...args) => {
   color = args[0].toRGBA();
   pickr.hide();
-  updatePageContent();
+  updatePageContent(1);
 });

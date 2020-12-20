@@ -1,4 +1,7 @@
 let jsonResponse;
+// let imageLoader = document.getElementById('formFile');
+
+// imageLoader.addEventListener('change', handleImage, false);
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -20,13 +23,18 @@ function sendApiRequest() {
     .catch(err => console.log(err));
 }
 
-async function updatePageContent() {
+async function updatePageContent(stage) {
     sendApiRequest();
 
     while (!jsonResponse) {
-    document.getElementById('productCatalog').innerHTML = '<h5 style="display: flex; justify-content: center; align-items: center; height: 100%; color: gray">Loading...</h5>';
+        if (stage == 1) {
+            document.getElementById('productCatalog1').innerHTML = '<h5 style="display: flex; justify-content: center; align-items: center; height: 100%; color: gray">Loading...</h5>';
+        } else {
+            document.getElementById('productCatalog2').innerHTML = '<h5 style="display: flex; justify-content: center; align-items: center; height: 100%; color: gray">Loading...</h5>';
+        }
     await sleep(50);
     }
+    // console.log(jsonResponse);
 
     let html = '<ul class="list-group-flush">';
     for (key in jsonResponse) {
@@ -46,26 +54,32 @@ async function updatePageContent() {
     html += `</li>`;
     }
     html += '</ul>';
-    document.getElementById('productCatalog').innerHTML = html;
+
+    if (stage == 1) {
+        document.getElementById('productCatalog1').innerHTML = html;
+    } else {
+        document.getElementById('productCatalog2').innerHTML = html;
+    }
+
     jsonResponse = '';
 }
 
-function handleFile(input) {
-    let file = input.files[0];
-    let ext = file.name.split('.').pop().toLowerCase();
-    console.log(ext);
-    console.log(typeof ext);
-    if (ext === 'png' || ext === 'jpg' || ext === 'jpeg') {
-        document.getElementById('filetypeAlert').style.display = 'none';
-        document.getElementById('stageTwoImageText').style.display = 'none';
-        document.getElementById('formFile').classList.add('mt-4');
-        // code
-    } else {
-        document.getElementById('filetypeAlert').style.display = 'inherit';
-        document.getElementById('stageTwoImageText').style.display = 'none';
-        // document.getElementById('stageTwoImageText').classList.add('mt-3');
-    }
-}
+// function handleFile(input) {
+//     let file = input.files[0];
+//     let ext = file.name.split('.').pop().toLowerCase();
+//     console.log(ext);
+//     console.log(typeof ext);
+    // if (ext === 'png' || ext === 'jpg' || ext === 'jpeg') {
+        // document.getElementById('filetypeAlert').style.display = 'none';
+        // document.getElementById('stageTwoImageText').style.display = 'none';
+        // document.getElementById('formFile').classList.add('mt-4');
+//         // code
+//     } else {
+//         document.getElementById('filetypeAlert').style.display = 'inherit';
+//         document.getElementById('stageTwoImageText').style.display = 'none';
+//         // document.getElementById('stageTwoImageText').classList.add('mt-3');
+//     }
+// }
 
 $('#getStarted').click(function() {
     $('#stageZero').fadeOut('fast');
@@ -73,11 +87,35 @@ $('#getStarted').click(function() {
 });
 
 $('#btnPicker').click(function() {
+    updatePageContent(1);
     $('#stageOne').fadeOut('fast');
+    $('#switchToImage').css('display', 'inherit');
     $('#stageTwoPicker').fadeIn(1000);
 });
 
-// $('#btnImage').click(function() {
-//     $('#stageOne').fadeOut('fast');
-//     $('#stageTwoImage').fadeIn(1700);
-// });
+$('#btnImage').click(function() {
+    $('#stageOne').fadeOut('fast');
+    $('#switchToPicker').css('display', 'inherit');
+    $('#stageTwoImage').fadeIn(1700);
+});
+
+$('#switchToPicker').click(function() {
+    updatePageContent(1);
+    pickr.color = color;
+    $('#stageTwoImage').fadeOut('fast');
+    $('#stageTwoPicker').fadeIn(1000);
+    $('#switchToPicker').hide();
+    $('#switchToImage').show();
+});
+
+$('#switchToImage').click(function() {
+    $('#stageTwoPicker').fadeOut('fast');
+    $('#stageTwoImage').fadeIn(1700);
+    $('#switchToImage').hide();
+    $('#switchToPicker').show();
+});
+
+
+$(document).ready(function () {
+    $('#productCatalog2').html('<h5 style="display: flex; justify-content: center; align-items: center; height: 100%; color: gray">Upload an image to select a color!</h5>');
+})
