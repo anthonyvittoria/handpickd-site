@@ -1,21 +1,18 @@
 let jsonResponse;
-// let imageLoader = document.getElementById('formFile');
-
-// imageLoader.addEventListener('change', handleImage, false);
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-function sendApiRequest() {
+function sendApiRequest(r, g, b) {
     let url = 'https://handpickd.herokuapp.com/';
     fetch(url, {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({
-        'r': Math.round(color[0]),
-        'g': Math.round(color[1]),
-        'b': Math.round(color[2])
+        'r': Math.round(r),
+        'g': Math.round(g),
+        'b': Math.round(b)
     })
     })
     .then(response => response.json())
@@ -23,8 +20,8 @@ function sendApiRequest() {
     .catch(err => console.log(err));
 }
 
-async function updatePageContent(stage) {
-    sendApiRequest();
+async function updatePageContent(stage, r=color[0], g=color[1], b=color[2]) {
+    sendApiRequest(r, g, b);
 
     while (!jsonResponse) {
         if (stage == 1) {
@@ -64,23 +61,6 @@ async function updatePageContent(stage) {
     jsonResponse = '';
 }
 
-// function handleFile(input) {
-//     let file = input.files[0];
-//     let ext = file.name.split('.').pop().toLowerCase();
-//     console.log(ext);
-//     console.log(typeof ext);
-    // if (ext === 'png' || ext === 'jpg' || ext === 'jpeg') {
-        // document.getElementById('filetypeAlert').style.display = 'none';
-        // document.getElementById('stageTwoImageText').style.display = 'none';
-        // document.getElementById('formFile').classList.add('mt-4');
-//         // code
-//     } else {
-//         document.getElementById('filetypeAlert').style.display = 'inherit';
-//         document.getElementById('stageTwoImageText').style.display = 'none';
-//         // document.getElementById('stageTwoImageText').classList.add('mt-3');
-//     }
-// }
-
 $('#getStarted').click(function() {
     $('#stageZero').fadeOut('fast');
     $('#stageOne').fadeIn(1000);
@@ -100,8 +80,8 @@ $('#btnImage').click(function() {
 });
 
 $('#switchToPicker').click(function() {
-    updatePageContent(1);
-    pickr.color = color;
+    pickr_color = pickr._color.toRGBA();
+    updatePageContent(1, pickr_color[0], pickr_color[1], pickr_color[2]);
     $('#stageTwoImage').fadeOut('fast');
     $('#stageTwoPicker').fadeIn(1000);
     $('#switchToPicker').hide();
