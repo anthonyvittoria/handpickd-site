@@ -109,6 +109,9 @@ li {
     #subtitle2 {
         width: 100%;
     }
+    #switchToImage, #switchToPicker {
+        width: 100%;
+    }
     .btn-card {
         width: 90%;
         height: 30vh;
