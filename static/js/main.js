@@ -31,7 +31,6 @@ async function updatePageContent(stage, r=color[0], g=color[1], b=color[2]) {
         }
     await sleep(50);
     }
-    // console.log(jsonResponse);
 
     let html = '<ul class="list-group-flush">';
     for (key in jsonResponse) {
