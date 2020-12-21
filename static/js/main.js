@@ -7,7 +7,7 @@ function sleep(ms) {
 function sendApiRequest(r, g, b) {
     let url = 'https://handpickd.herokuapp.com/';
     fetch(url, {
-    method: 'GET',
+    method: 'POST',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({
         'r': Math.round(r),
