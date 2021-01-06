@@ -29,6 +29,9 @@ function handleImage(e) {
     // Show canvas
     canvas.style.display = 'inherit';
 
+    // Show canvas caption
+    document.getElementById('canvasCaption').style.display = 'inherit';
+
     // Hide text
     document.getElementById('stageTwoImageText').style.display = 'none';
 
@@ -69,6 +72,7 @@ function handleImage(e) {
 }
 
 function getPixel(e) {
+    if (canvas.style.cursor == 'not-allowed') { return; }
     let x = 0, y = 0, o = canvas;
 
     do {
@@ -85,11 +89,13 @@ function getPixel(e) {
 }
 
 canvas.onmousedown = function(e) {
+    if (canvas.style.cursor == 'not-allowed') { return; }
     canvas.onmousemove = getPixel;
     canvas.onclick = getPixel;
 }
 
 canvas.onmouseup = function() {
+    if (canvas.style.cursor == 'not-allowed') { return; }
     canvas.onmousemove = null;
     updatePageContent(2);
 }

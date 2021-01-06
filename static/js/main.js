@@ -26,11 +26,23 @@ async function updatePageContent(stage, r=color[0], g=color[1], b=color[2]) {
     while (!jsonResponse) {
         if (stage == 1) {
             document.getElementById('productCatalog1').innerHTML = '<h5 style="display: flex; justify-content: center; align-items: center; height: 100%; color: gray">Loading...</h5>';
+            $('.pcr-button').css('cursor', 'not-allowed');
+            $('.pcr-button').prop('disabled', true);
         } else {
             document.getElementById('productCatalog2').innerHTML = '<h5 style="display: flex; justify-content: center; align-items: center; height: 100%; color: gray">Loading...</h5>';
+            $('#canvas').css('cursor', 'not-allowed');
+            $('#canvas').prop('disabled', true);
         }
     await sleep(50);
     }
+
+    // Restore pickr button
+    $('.pcr-button').css('cursor', 'pointer');
+    $('.pcr-button').prop('disabled', false);
+
+    // Restore canvas
+    $('#canvas').css('cursor', 'crosshair');
+    $('#canvas').prop('disabled', false);
 
     let html = '<ul class="list-group-flush">';
     for (key in jsonResponse) {
@@ -97,4 +109,14 @@ $('#switchToImage').click(function() {
 
 $(document).ready(function () {
     $('#productCatalog2').html('<h5 style="display: flex; justify-content: center; align-items: center; height: 100%; color: gray">Upload an image to select a color!</h5>');
-})
+});
+
+let cat1 = document.getElementById('productCatalog1');
+console.log(cat1);
+cat1.addEventListener('click', function() {
+    console.log("clicked!");
+});
+cat1.addEventListener('change', function() {
+    console.log('changed');
+    console.log(this);
+});
