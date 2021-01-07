@@ -20,6 +20,33 @@ a:hover, .likeLink:hover {
     text-decoration: none;
     color: #7e62ad;
 }
+.social-button:hover {
+    color: white;
+}
+.share-facebook {
+    background-color: #3b5998;
+}
+.share-facebook:hover {
+    background-color: #4a6ebb;
+}
+.share-reddit {
+    background-color: #ff4500;
+}
+.share-reddit:hover {
+    background-color: #ff6f3b;
+}
+.share-twitter {
+    background-color: #1da1f2;
+}
+.share-twitter:hover {
+    background-color: #57b1e9;
+}
+.share-linkedin {
+    background-color: #0077b5;
+}
+.share-linkedin:hover {
+    background-color: #458db4;
+}
 #logo1, #logo2 {
     font-weight: 700;
     letter-spacing: -1.5px;
@@ -123,6 +150,13 @@ a:hover, .likeLink:hover {
     footer {
         text-align: center;
     }
+    .social-button {
+        display: block;
+        margin-bottom: 15px;
+        padding: 10px 25px;
+        border: none;
+        color: white;
+    }
     .cursor-disabled, .cursor-disabled:hover {
         color: rgb(172, 172, 172);
         cursor: not-allowed;
@@ -142,5 +176,11 @@ a:hover, .likeLink:hover {
     }
     #eyedropperDisabled {
         display: none;
+    }
+    .social-button {
+        display: inline-block;
+        padding: 10px 25px;
+        border: none;
+        color: white;
     }
 }
