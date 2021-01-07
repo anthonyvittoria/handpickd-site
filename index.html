@@ -53,6 +53,17 @@
 <body>
     <div class="container">
 
+        <div class="modal" id="socialModal" tabindex="-1" aria-labelledby="socialModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body"></div>
+                </div>
+            </div>
+        </div>
+
         <!-- Header -->
         <div class="header">
             <a href="https://handpickd.app" style="text-decoration: none;">
@@ -156,9 +167,10 @@
                     title: "HandPickd.",
                     text: "Every shade at your fingertips!",
                     url: "https://handpickd.app",
-                }).then(() => console.log("Success"));
+                });
             } else {
-                console.log("Cannot share on this device!");
+                let modal = new bootstrap.Modal(document.getElementById('socialModal'));
+                modal.show();
             }
         });
     </script>
