@@ -57,11 +57,6 @@ a:hover, .likeLink:hover {
 .pcr-button {
     box-shadow: 1px 1px 5px gray;
 }
-.cursor-disabled, .cursor-disabled:hover {
-    color: rgb(172, 172, 172);
-    cursor: not-allowed;
-    box-shadow: none !important;
-}
 .v-h-center {
     display: flex;
     justify-content: center;
@@ -122,6 +117,17 @@ a:hover, .likeLink:hover {
     #switchToImage, #switchToPicker {
         width: 100%;
     }
+    #eyedropperEnabled {
+        display: none;
+    }
+    footer {
+        text-align: center;
+    }
+    .cursor-disabled, .cursor-disabled:hover {
+        color: rgb(172, 172, 172);
+        cursor: not-allowed;
+        box-shadow: none !important;
+    }
     .btn-card {
         width: 90%;
         height: 30vh;
@@ -133,5 +139,8 @@ a:hover, .likeLink:hover {
 @media (min-width: 576px) {
     .stageSwitchBtn {
         float: right;
+    }
+    #eyedropperDisabled {
+        display: none;
     }
 }

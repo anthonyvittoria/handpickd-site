@@ -85,6 +85,11 @@ $('#btnPicker').click(function() {
 });
 
 $('#btnImage').click(function() {
+    let ede = document.getElementById('eyedropperEnabled');
+    if (window.getComputedStyle(ede).display === "none") {
+        console.log("YO");
+        return; 
+    }
     $('#logo1').hide();
     $('#logo2').show();
     $('#stageOne').fadeOut('fast');
