@@ -124,4 +124,7 @@ li {
     .stageSwitchBtn {
         float: right;
     }
+    #mobileAlert {
+        display: none;
+    }
 }
