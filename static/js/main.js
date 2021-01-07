@@ -85,12 +85,16 @@ $('#btnPicker').click(function() {
 });
 
 $('#btnImage').click(function() {
+    $('#logo1').hide();
+    $('#logo2').show();
     $('#stageOne').fadeOut('fast');
     $('#switchToPicker').css('display', 'inherit');
     $('#stageTwoImage').fadeIn(1700);
 });
 
 $('#switchToPicker').click(function() {
+    $('#logo2').hide();
+    $('#logo1').show();
     pickr_color = pickr._color.toRGBA();
     updatePageContent(1, pickr_color[0], pickr_color[1], pickr_color[2]);
     $('#stageTwoImage').fadeOut('fast');
@@ -100,6 +104,8 @@ $('#switchToPicker').click(function() {
 });
 
 $('#switchToImage').click(function() {
+    $('#logo1').hide();
+    $('#logo2').show();
     $('#stageTwoPicker').fadeOut('fast');
     $('#stageTwoImage').fadeIn(1700);
     $('#switchToImage').hide();

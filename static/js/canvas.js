@@ -86,6 +86,8 @@ function getPixel(e) {
     color = [imageData.data[0], imageData.data[1], imageData.data[2]];
     let r = color[0], g = color[1], b = color[2];
     document.getElementById('canvas').style.borderColor = `rgb(${r}, ${g}, ${b})`;
+    document.getElementById('logo2').style.color = `rgb(${r}, ${g}, ${b})`;
+    document.getElementById('switchToPicker').style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
 }
 
 canvas.onmousedown = function(e) {

@@ -49,6 +49,8 @@ pickr.on('init', (...args) => {
   // updatePageContent(1);
 }).on('save', (...args) => {
   color = args[0].toRGBA();
+  document.getElementById('logo1').style.color = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
+  document.getElementById('switchToImage').style.backgroundColor = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
   pickr.hide();
   updatePageContent(1);
 });

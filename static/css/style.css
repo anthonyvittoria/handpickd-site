@@ -10,7 +10,7 @@ canvas {
 li {
     text-align: left;
 }
-#logo {
+#logo1, #logo2 {
     font-weight: 700;
     letter-spacing: -1.5px;
     color: #9978D4;
