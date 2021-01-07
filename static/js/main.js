@@ -110,13 +110,3 @@ $('#switchToImage').click(function() {
 $(document).ready(function () {
     $('#productCatalog2').html('<h5 style="display: flex; justify-content: center; align-items: center; height: 100%; color: gray">Upload an image to select a color!</h5>');
 });
-
-let cat1 = document.getElementById('productCatalog1');
-console.log(cat1);
-cat1.addEventListener('click', function() {
-    console.log("clicked!");
-});
-cat1.addEventListener('change', function() {
-    console.log('changed');
-    console.log(this);
-});
