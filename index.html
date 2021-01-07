@@ -168,16 +168,8 @@
     <script src="static/js/canvas.js"></script>
     <script>
         document.getElementById('share').addEventListener('click', async () => {
-            if (navigator.share) {
-                navigator.share({
-                    title: "HandPickd.",
-                    text: "Every shade at your fingertips!",
-                    url: "https://handpickd.app",
-                });
-            } else {
-                let modal = new bootstrap.Modal(document.getElementById('socialModal'));
-                modal.show();
-            }
+            let modal = new bootstrap.Modal(document.getElementById('socialModal'));
+            modal.show();
         });
     </script>
 </body>
