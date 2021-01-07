@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-100">
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JN8SZ25FF5"></script>
@@ -50,109 +50,111 @@
     <link rel="stylesheet" href="static/css/style.css" />
 
 </head>
-<body>
-    <div class="container">
-
-        <div class="modal" id="socialModal" tabindex="-1" aria-labelledby="socialModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title text-center">Share HandPickd</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body mx-auto p-5">
-                        <a target="_blank" href="https://www.facebook.com/sharer.php?u=https://handpickd.app" class="social-button share-facebook"><i class="fab fa-facebook-f"></i>&nbsp;&nbsp;Facebook</a>
-                        <a target="_blank" href="https://reddit.com/submit?url=https://handpickd.app&title=HandPickd%20-%20Find%20nail%20polish%20matching%20any%20color" class="social-button share-reddit"><i class="fab fa-reddit-alien"></i>&nbsp;&nbsp;Reddit</a>
-                        <a target="_blank" href="https://twitter.com/share?url=https://handpickd.app&text=Find%20nail%20polishes%20matching%20any%20color%20with%20HandPickd!&via=HandPickdApp" class="social-button share-twitter"><i class="fab fa-twitter"></i>&nbsp;&nbsp;Twitter</a>
-                        <a target="_blank" href="https://www.linkedin.com/shareArticle?url=https://handpickd.app&title=Find%20nail%20polishes%20matching%20any%20color%20with%20HandPickd!" class="social-button share-linkedin"><i class="fab fa-linkedin-in"></i>&nbsp;&nbsp;LinkedIn</a>
+<body class="d-flex flex-column h-100">
+    <main class="flex-shrink-0">
+        <div class="container">
+    
+            <div class="modal" id="socialModal" tabindex="-1" aria-labelledby="socialModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-center">Share HandPickd</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body mx-auto p-5">
+                            <a target="_blank" href="https://www.facebook.com/sharer.php?u=https://handpickd.app" class="social-button share-facebook"><i class="fab fa-facebook-f"></i>&nbsp;&nbsp;Facebook</a>
+                            <a target="_blank" href="https://reddit.com/submit?url=https://handpickd.app&title=HandPickd%20-%20Find%20nail%20polish%20matching%20any%20color" class="social-button share-reddit"><i class="fab fa-reddit-alien"></i>&nbsp;&nbsp;Reddit</a>
+                            <a target="_blank" href="https://twitter.com/share?url=https://handpickd.app&text=Find%20nail%20polishes%20matching%20any%20color%20with%20HandPickd!&via=HandPickdApp" class="social-button share-twitter"><i class="fab fa-twitter"></i>&nbsp;&nbsp;Twitter</a>
+                            <a target="_blank" href="https://www.linkedin.com/shareArticle?url=https://handpickd.app&title=Find%20nail%20polishes%20matching%20any%20color%20with%20HandPickd!" class="social-button share-linkedin"><i class="fab fa-linkedin-in"></i>&nbsp;&nbsp;LinkedIn</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!-- Header -->
-        <div class="header">
-            <a href="https://handpickd.app" style="text-decoration: none;">
-                <h1 id="logo1">HandPickd.</h1>
-                <h1 id="logo2" style="display: none;">HandPickd.</h1>
-            </a>
-            <p style="display: inline-flex;">Every shade at your fingertips!</p>
-            <p id="switchToPicker" class="stageSwitchBtn btn btn-header" style="display: none;">Switch to Color Picker</p>
-            <p id="switchToImage" class="stageSwitchBtn btn btn-header" style="display: none;">Switch to Eyedropper</p>
-        </div>
-
-
-        <div id="main" class="main text-center">
-            <!-- Stage Zero -->
-            <div id="stageZero">
-                <h5 id="subtitle1" class="mb-4">Meet your personal nail polish shopper &#128133;</h5>
-                <p id="subtitle2" class="mb-5 mx-auto">Turn any color into a personalized catalog of nail polishes
-                    with the touch of a button.
-                </p>
-                <p id="getStarted" class="btn btn-lg btn-rainbow">Get Started</p>
+    
+            <!-- Header -->
+            <div class="header">
+                <a href="https://handpickd.app" style="text-decoration: none;">
+                    <h1 id="logo1">HandPickd.</h1>
+                    <h1 id="logo2" style="display: none;">HandPickd.</h1>
+                </a>
+                <p style="display: inline-flex;">Every shade at your fingertips!</p>
+                <p id="switchToPicker" class="stageSwitchBtn btn btn-header" style="display: none;">Switch to Color Picker</p>
+                <p id="switchToImage" class="stageSwitchBtn btn btn-header" style="display: none;">Switch to Eyedropper</p>
             </div>
-
-            <!-- Stage One: choose picker or image -->
-            <div id="stageOne" style="display: none;">
-                <h5 class="my-5">Let's find your color! &#127912;</h5>
-                <div class="row v-h-center">
-                    <div class="col-md-4">
-                        <div id="btnPicker" class="card btn btn-card">
-                            <div class="card-body v-h-center">
-                                <p><b>Color Picker</b><br>The whole rainbow</p>
+    
+    
+            <div id="main" class="main text-center">
+                <!-- Stage Zero -->
+                <div id="stageZero">
+                    <h5 id="subtitle1" class="mb-4">Meet your personal nail polish shopper &#128133;</h5>
+                    <p id="subtitle2" class="mb-5 mx-auto">Turn any color into a personalized catalog of nail polishes
+                        with the touch of a button.
+                    </p>
+                    <p id="getStarted" class="btn btn-lg btn-rainbow">Get Started</p>
+                </div>
+    
+                <!-- Stage One: choose picker or image -->
+                <div id="stageOne" style="display: none;">
+                    <h5 class="my-5">Let's find your color! &#127912;</h5>
+                    <div class="row v-h-center">
+                        <div class="col-md-4">
+                            <div id="btnPicker" class="card btn btn-card">
+                                <div class="card-body v-h-center">
+                                    <p><b>Color Picker</b><br>The whole rainbow</p>
+                                </div>
+    
                             </div>
-
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div id="btnImage" class="card btn btn-card cursor-disabled">
-                            <div class="card-body v-h-center">
-                                <p id="eyedropperEnabled"><b>Eyedropper</b><br>Choose from image</p>
-                                <p id="eyedropperDisabled"><b>Eyedropper</b><br>Coming soon to mobile!</p>
+                        <div class="col-md-4">
+                            <div id="btnImage" class="card btn btn-card cursor-disabled">
+                                <div class="card-body v-h-center">
+                                    <p id="eyedropperEnabled"><b>Eyedropper</b><br>Choose from image</p>
+                                    <p id="eyedropperDisabled"><b>Eyedropper</b><br>Coming soon to mobile!</p>
+                                </div>
+    
                             </div>
-
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Stage Two (picker) -->
-            <div id="stageTwoPicker" style="display: none;">
-                <div class="row">
-                    <div class="col-md-4 v-h-center">
-                        <div class="card-body">
-                            <h5 class="mb-3">Select a color</h5>
-                            <div class="color-picker"></div>
+    
+                <!-- Stage Two (picker) -->
+                <div id="stageTwoPicker" style="display: none;">
+                    <div class="row">
+                        <div class="col-md-4 v-h-center">
+                            <div class="card-body">
+                                <h5 class="mb-3">Select a color</h5>
+                                <div class="color-picker"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-8" style="text-align: left;">
+                            <div id="productCatalog1" class="productCatalog scrollContent container mt-5 pt-3" style="border: 1px solid lightgray; border-radius: 5px;"></div>
                         </div>
                     </div>
-                    <div class="col-md-8" style="text-align: left;">
-                        <div id="productCatalog1" class="productCatalog scrollContent container mt-5 pt-3" style="border: 1px solid lightgray; border-radius: 5px;"></div>
-                    </div>
+    
                 </div>
-
-            </div>
-
-            <!-- Stage Two (image) -->
-            <div id="stageTwoImage" style="display: none;">
-                <div class="row">
-                    <div class="col-md-5">
-                        <div class="card-body">
-                            <div id="filetypeAlert" class="alert alert-danger mt-5" style="display: none;">Oops! Make sure to upload an image!</div>
-                            <h5 id="stageTwoImageText" class="mt-5 mb-3">Upload an image</h5>
-                            <input class="form-control w-75 mx-auto" type="file" id="formFile">
-                            <canvas id="canvas" style="display: none;" class="mt-4 mx-auto">Your web browser does not support HTML5 canvas.</canvas>
-                            <p id="canvasCaption" class="text-center text-muted mt-4" style="display: none;">Click and drag to find the perfect color!</p>
+    
+                <!-- Stage Two (image) -->
+                <div id="stageTwoImage" style="display: none;">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="card-body">
+                                <div id="filetypeAlert" class="alert alert-danger mt-5" style="display: none;">Oops! Make sure to upload an image!</div>
+                                <h5 id="stageTwoImageText" class="mt-5 mb-3">Upload an image</h5>
+                                <input class="form-control w-75 mx-auto" type="file" id="formFile">
+                                <canvas id="canvas" style="display: none;" class="mt-4 mx-auto">Your web browser does not support HTML5 canvas.</canvas>
+                                <p id="canvasCaption" class="text-center text-muted mt-4" style="display: none;">Click and drag to find the perfect color!</p>
+                            </div>
+                        </div>
+                        <div class="col-md-7 v-h-center mx-auto">
+                            <div id="productCatalog2" class="productCatalog scrollContent container mt-5 pt-3" style="border: 1px solid lightgray; border-radius: 5px;"></div>
                         </div>
                     </div>
-                    <div class="col-md-7 v-h-center mx-auto">
-                        <div id="productCatalog2" class="productCatalog scrollContent container mt-5 pt-3" style="border: 1px solid lightgray; border-radius: 5px;"></div>
-                    </div>
                 </div>
+    
             </div>
-
         </div>
-    </div>
-    <footer class="text-muted py-5" style="height: 100px">
+    </main>
+    <footer class="text-muted mt-auto py-5 v-h-center" style="height: 100px">
         <div class="container">
             <a href="https://twitter.com/HandPickdApp" style="display: inline-block"><i class="fab fa-twitter"></i>&nbsp;Twitter</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <p id="share" class="likeLink" style="display: inline-block;"><i class="fas fa-share-square"></i>&nbsp;Share</p>
