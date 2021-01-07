@@ -1,4 +1,5 @@
 let jsonResponse;
+let ede = document.getElementById('eyedropperEnabled');
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -80,12 +81,14 @@ $('#getStarted').click(function() {
 $('#btnPicker').click(function() {
     updatePageContent(1);
     $('#stageOne').fadeOut('fast');
-    $('#switchToImage').css('display', 'inherit');
+    if (window.getComputedStyle(ede).display !== "none") {
+        $('#switchToImage').css('display', 'inherit');
+
+    }
     $('#stageTwoPicker').fadeIn(1000);
 });
 
 $('#btnImage').click(function() {
-    let ede = document.getElementById('eyedropperEnabled');
     if (window.getComputedStyle(ede).display === "none") { return; }
     $('#logo1').hide();
     $('#logo2').show();
