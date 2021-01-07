@@ -1,6 +1,6 @@
 body {
     font-family: 'Montserrat';
-    margin-bottom: 60px;
+    /* margin-bottom: 60px; */
 }
 canvas {
     border-width  : 15px;
@@ -9,6 +9,16 @@ canvas {
 }
 li {
     text-align: left;
+}
+a, .likeLink {
+    cursor: pointer;
+    text-decoration: none;
+    color: #9978D4;
+}
+a:hover, .likeLink:hover {
+    cursor: pointer;
+    text-decoration: none;
+    color: #7e62ad;
 }
 #logo1, #logo2 {
     font-weight: 700;
@@ -48,7 +58,7 @@ li {
     box-shadow: 1px 1px 5px gray;
 }
 .cursor-disabled, .cursor-disabled:hover {
-    color: #ccc;
+    color: rgb(172, 172, 172);
     cursor: not-allowed;
     box-shadow: none !important;
 }
@@ -123,8 +133,5 @@ li {
 @media (min-width: 576px) {
     .stageSwitchBtn {
         float: right;
-    }
-    #mobileAlert {
-        display: none;
     }
 }

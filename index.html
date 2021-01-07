@@ -38,6 +38,9 @@
     <!-- Pickr -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css"/>
 
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/77d041732e.js" crossorigin="anonymous"></script>
+
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
@@ -63,8 +66,6 @@
 
 
         <div id="main" class="main text-center">
-            <div id="mobileAlert" class="alert alert-warning" role="alert">Improvements to mobile site coming soon!</div>
-
             <!-- Stage Zero -->
             <div id="stageZero">
                 <h5 id="subtitle1" class="mb-4">Meet your personal nail polish shopper &#128133;</h5>
@@ -87,9 +88,9 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div id="btnImage" class="card btn btn-card">
+                        <div id="btnImage" class="card btn btn-card cursor-disabled">
                             <div class="card-body v-h-center">
-                                <p><b>Eyedropper</b><br>Choose from image</p>
+                                <p><b>Eyedropper</b><br>Not yet supported on mobile!</p>
                             </div>
 
                         </div>
@@ -133,6 +134,12 @@
 
         </div>
     </div>
+    <footer class="text-muted py-5" style="height: 100px">
+        <div class="container">
+            <a href="https://twitter.com/HandPickdApp" style="display: inline-block"><i class="fab fa-twitter"></i>&nbsp;Twitter</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <p id="share" class="likeLink" style="display: inline-block;"><i class="fas fa-share-square"></i>&nbsp;Share</p>
+        </div>
+    </footer>
     <img src="static/img/meta.png" style="display: none;">
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
@@ -141,5 +148,18 @@
     <script src="static/js/main.js"></script>
     <script src="static/js/pickr.js"></script>
     <script src="static/js/canvas.js"></script>
+    <script>
+        document.getElementById('share').addEventListener('click', async () => {
+            if (navigator.share) {
+                navigator.share({
+                    title: "HandPickd.",
+                    text: "Every shade at your fingertips!",
+                    url: "https://handpickd.app",
+                }).then(() => console.log("Success"));
+            } else {
+                console.log("Cannot share on this device!");
+            }
+        });
+    </script>
 </body>
 </html>
